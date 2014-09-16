@@ -87,18 +87,17 @@ module.exports = function(grunt) {
         },
 
 
-        rev: {
+        filerev: {
             options: {
                 encoding: 'utf8',
                 algorithm: 'md5',
                 length: 8
             },
-            assets: {
-                files: [{
-                    src: [
-                        'build/css/**/*.css'
-                    ]
-                }]
+            css: {
+                src: ['build/css/**/*.css']
+            },
+            images: {
+                src: ['build/img/**/*.{png,jpg}']
             }
         },
 
@@ -109,7 +108,8 @@ module.exports = function(grunt) {
 
 
         usemin: {
-            html: ['build/index.html']
+            html: ['build/index.html'],
+            css: ['build/css/*.css']
         },
 
 
@@ -134,7 +134,7 @@ module.exports = function(grunt) {
 
     // 发布环境
     grunt.registerTask('build:pre', ['rm', 'copy:build']);
-    grunt.registerTask('build:opt', ['useminPrepare', 'cssmin:build', 'rev', 'usemin']);
+    grunt.registerTask('build:opt', ['useminPrepare', 'cssmin:build', 'filerev', 'usemin']);
     grunt.registerTask('build', ['build:pre', 'build:opt']);
 
     grunt.registerTask('default', ['src', 'build'])

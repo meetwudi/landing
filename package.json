@@ -19,7 +19,7 @@
     "grunt-contrib-less": "^0.11.4",
     "grunt-contrib-uglify": "^0.5.1",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-rev": "^0.1.0",
+    "grunt-filerev": "^0.2.1",
     "grunt-rm": "0.0.4",
     "grunt-spritesmith": "^2.1.1",
     "grunt-usemin": "^2.4.0",

@@ -28,14 +28,18 @@
 
     .banner__nav .nav__item {
       float: left;
-    }
-
-    .banner__nav [class^='icon-'] {
       margin: 0 1rem;
 
       &:hover {
         .lh-scale(1.1);
         .lh-transition(all .1s linear);
+      }
+
+      @media (max-width: @screen-sm-max) {
+        .lh-scale(.7);
+        &:hover {
+          .lh-scale(.8);
+        }
       }
     }
 }
