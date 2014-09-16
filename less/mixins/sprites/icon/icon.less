@@ -1,0 +1,76 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path;
+*/
+@blog-x: 0px;
+@blog-y: 0px;
+@blog-offset-x: 0px;
+@blog-offset-y: 0px;
+@blog-width: 94px;
+@blog-height: 94px;
+@blog-total-width: 94px;
+@blog-total-height: 286px;
+@blog-image: '../img/icon/icon.png';
+@blog: 0px 0px 0px 0px 94px 94px 94px 286px '../img/icon/icon.png';
+@email-x: 0px;
+@email-y: 96px;
+@email-offset-x: 0px;
+@email-offset-y: -96px;
+@email-width: 94px;
+@email-height: 94px;
+@email-total-width: 94px;
+@email-total-height: 286px;
+@email-image: '../img/icon/icon.png';
+@email: 0px 96px 0px -96px 94px 94px 94px 286px '../img/icon/icon.png';
+@weibo-x: 0px;
+@weibo-y: 192px;
+@weibo-offset-x: 0px;
+@weibo-offset-y: -192px;
+@weibo-width: 94px;
+@weibo-height: 94px;
+@weibo-total-width: 94px;
+@weibo-total-height: 286px;
+@weibo-image: '../img/icon/icon.png';
+@weibo: 0px 192px 0px -192px 94px 94px 94px 286px '../img/icon/icon.png';
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+*/
+.sprite-width(@sprite) {
+  width: ~`"@{sprite}".split(', ')[4]`;
+}
+
+.sprite-height(@sprite) {
+  height: ~`"@{sprite}".split(', ')[5]`;
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: ~`"@{sprite}".split(', ')[2]`;
+  @sprite-offset-y: ~`"@{sprite}".split(', ')[3]`;
+  background-position: @sprite-offset-x  @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: ~`"@{sprite}".split(', ')[8].slice(1, -2)`;
+  background-image: url(@sprite-image);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
