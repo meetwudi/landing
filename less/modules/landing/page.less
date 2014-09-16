@@ -1,0 +1,19 @@
+@import '../../mixins/mixins';
+
+.page {
+  position: relative;
+  height: 100%;
+  background: url(../img/background.jpg) no-repeat center center fixed;
+  .lh-background-size(cover);
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+}
+
+  .page__overlay {
+    background-color: @colorLightOverlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
