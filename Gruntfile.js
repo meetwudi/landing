@@ -4,14 +4,14 @@ module.exports = function(grunt) {
 
 
         less: {
-            prepub: {
+            src: {
                 options: {
                     sourceMap: true,
                     sourceMapURL: '<%= pkg.name %>.css.map',
-                    sourceMapFilename: 'prepub/css/<%= pkg.name %>.css.map'
+                    sourceMapFilename: 'src/css/<%= pkg.name %>.css.map'
                 },
                 files: {
-                    'prepub/css/<%= pkg.name %>.css': 'less/<%= pkg.name %>.less'
+                    'src/css/<%= pkg.name %>.css': 'less/<%= pkg.name %>.less'
                 }
             }
         },
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         copy: {
             build: {
                 files: [
-                    {expand: true, cwd: 'prepub', src: ['**'], dest: 'build/'}
+                    {expand: true, cwd: 'src', src: ['**'], dest: 'build/'}
                 ]
             }
         },
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         sprite: {
             icon: {
                 src: ['img/icon/*.png'],
-                destImg: 'prepub/img/icon/icon.png',
+                destImg: 'src/img/icon/icon.png',
                 destCSS: 'less/bootstrap/icon.less',
                 padding: 2,
                 cssFormat: 'less',
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
             },
             icon_2x: {
                 src: ['img/icon-2x/*.png'],
-                destImg: 'prepub/img/icon/icon-2x.png',
+                destImg: 'src/img/icon/icon-2x.png',
                 destCSS: 'less/bootstrap/icon-2x.less',
                 padding: 2,
                 cssFormat: 'less',
@@ -62,15 +62,15 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     // 预发布
-    grunt.registerTask('prepub:image', ['sprite']);
-    grunt.registerTask('prepub:css', ['less:prepub']);
-    grunt.registerTask('prepub', ['prepub:css']);
+    grunt.registerTask('src:image', ['sprite']);
+    grunt.registerTask('src:css', ['less:src']);
+    grunt.registerTask('src', ['src:css']);
 
     // 发布环境
     grunt.registerTask('build:pre', ['copy:build']);
     grunt.registerTask('build:css', ['cssmin:build']);
     grunt.registerTask('build', ['build:pre', 'build:css']);
 
-    grunt.registerTask('default', ['prepub', 'build'])
+    grunt.registerTask('default', ['src', 'build'])
 //    grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 };

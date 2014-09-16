@@ -3,7 +3,10 @@
 
 // @2x Sprite helper
 // --------------------------------------------------
-.sprite-2x(@sprite2x, @sprite1x) {
+.sprite-2x(@sprite) {
+  @sprite1x: @sprite;
+  @sprite2x: "@{sprite}-2x";
+
   .sprite(@sprite1x);
 
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
