@@ -23,8 +23,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'build/css',
                     src: ['*.css', '!*.min.css'],
-                    dest: 'build/css',
-                    ext: '.min.css'
+                    dest: 'build/css'
                 }]
             }
         },
@@ -56,6 +55,48 @@ module.exports = function(grunt) {
                 cssFormat: 'less',
                 imgPath: '../img/icon/icon-2x.png'
             }
+        },
+
+
+        watch: {
+            files: ['less/**/*.less', 'src/*.html'],
+            tasks: ['src'],
+            options: {
+                livereload: true
+            }
+        },
+
+
+        rm: {
+          buildDir: {
+              dir: 'build'
+          }
+        },
+
+
+        rev: {
+            options: {
+                encoding: 'utf8',
+                algorithm: 'md5',
+                length: 8
+            },
+            assets: {
+                files: [{
+                    src: [
+                        'build/css/**/*.css',
+                        'build/img/**/*.{jpg,png}'
+                    ]
+                }]
+            }
+        },
+
+
+        useminPrepare: {
+            html: ['build/index.html']
+        },
+
+        usemin: {
+            html: ['build/index.html']
         }
     });
 
@@ -67,9 +108,9 @@ module.exports = function(grunt) {
     grunt.registerTask('src', ['src:css']);
 
     // 发布环境
-    grunt.registerTask('build:pre', ['copy:build']);
-    grunt.registerTask('build:css', ['cssmin:build']);
-    grunt.registerTask('build', ['build:pre', 'build:css']);
+    grunt.registerTask('build:pre', ['rm', 'copy:build']);
+    grunt.registerTask('build:opt', ['useminPrepare', 'cssmin:build', 'rev', 'usemin']);
+    grunt.registerTask('build', ['build:pre', 'build:opt']);
 
     grunt.registerTask('default', ['src', 'build'])
 //    grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
