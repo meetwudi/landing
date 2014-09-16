@@ -42,18 +42,30 @@ module.exports = function(grunt) {
             icon: {
                 src: ['img/icon/*.png'],
                 destImg: 'src/img/icon/icon.png',
-                destCSS: 'less/bootstrap/icon.less',
+                destCSS: 'less/mixins/sprites/icon/icon.less',
                 padding: 2,
                 cssFormat: 'less',
-                imgPath: '../img/icon/icon.png'
+                imgPath: '../img/icon/icon.png',
+                cssVarMap: function (sprite) {
+                    // `sprite` has `name`, `image` (full path), `x`, `y`
+                    //   `width`, `height`, `total_width`, `total_height`
+                    // EXAMPLE: Prefix all sprite names with 'sprite-'
+                    sprite.name = 'sprite-' + sprite.name;
+                }
             },
             icon_2x: {
                 src: ['img/icon-2x/*.png'],
                 destImg: 'src/img/icon/icon-2x.png',
-                destCSS: 'less/bootstrap/icon-2x.less',
+                destCSS: 'less/mixins/sprites/icon/icon-2x.less',
                 padding: 2,
                 cssFormat: 'less',
-                imgPath: '../img/icon/icon-2x.png'
+                imgPath: '../img/icon/icon-2x.png',
+                cssVarMap: function (sprite) {
+                    // `sprite` has `name`, `image` (full path), `x`, `y`
+                    //   `width`, `height`, `total_width`, `total_height`
+                    // EXAMPLE: Prefix all sprite names with 'sprite-'
+                    sprite.name = 'sprite-' + sprite.name;
+                }
             }
         },
 
@@ -103,7 +115,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     // 预发布
-    grunt.registerTask('src:image', ['sprite']);
+    grunt.registerTask('src:sprite', ['sprite']);
     grunt.registerTask('src:css', ['less:src']);
     grunt.registerTask('src', ['src:css']);
 

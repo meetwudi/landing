@@ -1,0 +1,43 @@
+@import "../../mixins/mixins";
+
+.banner {
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+
+  .banner__title-lg {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+  }
+
+  .banner__title-sm {
+    font-size: 2.25rem;
+    font-weight: 300;
+  }
+
+  .banner__nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+
+    .banner__nav .nav__item {
+      float: left;
+    }
+
+    .banner__nav [class^='icon-'] {
+      margin: 0 1rem;
+
+      &:hover {
+        .lh-scale(1.1);
+        .lh-transition(all .1s linear);
+      }
+    }
+}
+
+
