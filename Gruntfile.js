@@ -116,7 +116,7 @@ module.exports = function(grunt) {
         imagemin: {
             bigimage: {
                 files: {
-                    'img/background.jpg': 'img/background.jpg'
+                    'src/img/background.jpg': 'img/background.jpg'
                 },
                 options: {
                     optimizationLevel: 3
@@ -128,7 +128,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     // 预发布
-    grunt.registerTask('src:sprite', ['sprite']);
+    grunt.registerTask('src:image', ['sprite', 'imagemin']);
     grunt.registerTask('src:css', ['less:src']);
     grunt.registerTask('src', ['src:css']);
 
