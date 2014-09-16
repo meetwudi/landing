@@ -360,7 +360,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', "Helvetica Neue", Arial, sans-serif;
 }
 .container {
   margin-right: auto;
