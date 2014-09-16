@@ -1,3 +1,4 @@
+
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -95,8 +96,7 @@ module.exports = function(grunt) {
             assets: {
                 files: [{
                     src: [
-                        'build/css/**/*.css',
-                        'build/img/**/*.{jpg,png}'
+                        'build/css/**/*.css'
                     ]
                 }]
             }
@@ -107,8 +107,21 @@ module.exports = function(grunt) {
             html: ['build/index.html']
         },
 
+
         usemin: {
             html: ['build/index.html']
+        },
+
+
+        imagemin: {
+            bigimage: {
+                files: {
+                    'img/background.jpg': 'img/background.jpg'
+                },
+                options: {
+                    optimizationLevel: 3
+                }
+            }
         }
     });
 
