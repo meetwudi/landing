@@ -1124,7 +1124,7 @@ body {
 }
 .page .page__overlay {
   display: block;
-  background-color: rgba(246, 168, 168, 0.5);
+  background-color: rgba(44, 62, 80, 0.3);
   position: absolute;
   z-index: 0;
   top: 0;
