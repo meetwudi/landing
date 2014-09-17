@@ -1030,14 +1030,14 @@ h6 {
   }
 }
 .icon-email {
-  background-image: url(../img/icon/icon.png);
+  background-image: url(/img/icon/icon.png);
   background-position: 0px -74px;
   width: 72px;
   height: 72px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
   .icon-email {
-    background-image: url(../img/icon/icon-2x.png);
+    background-image: url(/img/icon/icon-2x.png);
     background-position: 0px -146px;
     width: 144px;
     height: 144px;
@@ -1048,14 +1048,14 @@ h6 {
   }
 }
 .icon-blog {
-  background-image: url(../img/icon/icon.png);
+  background-image: url(/img/icon/icon.png);
   background-position: 0px 0px;
   width: 72px;
   height: 72px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
   .icon-blog {
-    background-image: url(../img/icon/icon-2x.png);
+    background-image: url(/img/icon/icon-2x.png);
     width: 144px;
     height: 144px;
     background-position: 0px 0px;
@@ -1065,14 +1065,14 @@ h6 {
   }
 }
 .icon-weibo {
-  background-image: url(../img/icon/icon.png);
+  background-image: url(/img/icon/icon.png);
   background-position: 0px -148px;
   width: 72px;
   height: 72px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
   .icon-weibo {
-    background-image: url(../img/icon/icon-2x.png);
+    background-image: url(/img/icon/icon-2x.png);
     background-position: 0px -292px;
     width: 144px;
     height: 144px;
@@ -1115,7 +1115,7 @@ body {
   position: relative;
   overflow: auto;
   height: 100%;
-  background: url(../img/background.jpg) no-repeat center center fixed;
+  background: url(/img/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
