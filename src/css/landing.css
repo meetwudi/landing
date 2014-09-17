@@ -1148,6 +1148,40 @@ body {
 .banner .banner__title-sm {
   font-size: 2.25rem;
   font-weight: 300;
+  position: relative;
+  border-right: 2px solid rgba(255, 255, 255, 0.6);
+  border-left: 2px solid rgba(255, 255, 255, 0.6);
+}
+@media (min-width: 768px) {
+  .banner .banner__title-sm {
+    width: 28rem;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+  .banner .banner__title-sm:after {
+    content: '';
+    height: .4rem;
+    width: 9999px;
+    border-top: 2px solid rgba(255, 255, 255, 0.6);
+    display: block;
+    position: absolute;
+    right: -10001px;
+    top: 50%;
+    margin-top: -0.2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  }
+  .banner .banner__title-sm:before {
+    content: '';
+    height: .4rem;
+    width: 9999px;
+    border-top: 2px solid rgba(255, 255, 255, 0.6);
+    display: block;
+    position: absolute;
+    left: -10001px;
+    top: 50%;
+    margin-top: -0.2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  }
 }
 .banner .banner__nav {
   list-style-type: none;
