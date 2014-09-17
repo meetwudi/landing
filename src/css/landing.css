@@ -1044,7 +1044,7 @@ h6 {
     background-position: 0px -74px;
     height: 72px;
     width: 72px;
-    background-size: 72px 220px;
+    background-size: 142px 366px;
   }
 }
 .icon-blog {
@@ -1061,7 +1061,7 @@ h6 {
     background-position: 0px 0px;
     height: 72px;
     width: 72px;
-    background-size: 72px 220px;
+    background-size: 142px 366px;
   }
 }
 .icon-weibo {
@@ -1079,7 +1079,7 @@ h6 {
     background-position: 0px -148px;
     height: 72px;
     width: 72px;
-    background-size: 72px 220px;
+    background-size: 142px 366px;
   }
 }
 [class^="icon-"] {
@@ -1109,7 +1109,7 @@ body {
 .wrap-anchor {
   display: block;
 }
-.page {
+.welcome {
   display: table;
   width: 100%;
   position: relative;
@@ -1122,7 +1122,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
 }
-.page .page__overlay {
+.welcome .welcome__overlay {
   display: block;
   background-color: rgba(44, 62, 80, 0.3);
   position: absolute;
