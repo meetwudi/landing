@@ -1,3 +1,5 @@
+var cdnAddr = '//cdn.leapoahead.com/';
+
 
 module.exports = function(grunt) {
     grunt.initConfig({
@@ -122,6 +124,25 @@ module.exports = function(grunt) {
                     optimizationLevel: 3
                 }
             }
+        },
+
+        cdnify: {
+            build: {
+                options: {
+                    rewriter: function (url) {
+                        if (url.indexOf('../img') === 0) {
+                            url = url.replace('../img', '/img');
+                        }
+                        return cdnAddr + url.replace(/^\//, '');
+                    }
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'build',
+                    src: '**/*.{css,html}',
+                    dest: 'build'
+                }]
+            }
         }
     });
 
@@ -134,7 +155,7 @@ module.exports = function(grunt) {
 
     // 发布环境
     grunt.registerTask('build:pre', ['rm', 'copy:build']);
-    grunt.registerTask('build:opt', ['useminPrepare', 'cssmin:build', 'filerev', 'usemin']);
+    grunt.registerTask('build:opt', ['useminPrepare', 'cssmin:build', 'filerev', 'usemin', 'cdnify']);
     grunt.registerTask('build', ['build:pre', 'build:opt']);
 
     grunt.registerTask('default', ['src', 'build'])
