@@ -158,9 +158,6 @@ module.exports = function(grunt) {
     grunt.registerTask('build:opt', ['useminPrepare', 'cssmin:build', 'filerev', 'usemin', 'cdnify']);
     grunt.registerTask('build', ['build:pre', 'build:opt']);
 
-    // 部署
-    grunt.registerTask('deploy', ['src:image', 'default']);
-
     grunt.registerTask('default', ['src', 'build'])
 //    grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 };
