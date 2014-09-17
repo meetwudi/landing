@@ -1115,6 +1115,7 @@ body {
   position: relative;
   overflow: auto;
   height: 100%;
+  overflow-x: hidden;
   background: url(../img/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
