@@ -222,11 +222,16 @@ html,
 body {
   height: 100%;
 }
-p {
+p,
+.normal-text {
   line-height: 1.67;
 }
 [class^='col-'] {
   box-sizing: border-box;
+}
+[class^='container'] {
+  box-sizing: border-box;
+  padding: 0 1rem !important;
 }
 /* cyrillic-ext */
 @font-face {
@@ -359,14 +364,16 @@ p {
 html {
   font-size: 16px;
 }
-p {
+p,
+.normal-text {
   font-size: 1rem;
 }
 @media (max-width: 767px) {
   html {
     font-size: 12px;
   }
-  p {
+  p,
+  .normal-text {
     font-size: 1.2rem;
   }
 }
@@ -1331,8 +1338,78 @@ lesshat-selector { -lh-property: 0 ;
   color: #ecf0f1;
   padding-left: 2rem;
 }
+@media (max-width: 767px) {
+  .intro .intro__content {
+    padding-left: 0;
+  }
+}
 .intro .intro__title {
   font-size: 2.25rem;
   font-weight: 300;
+}
+.timeline {
+  overflow: hidden;
+}
+.timeline .row {
+  margin-bottom: 5rem;
+}
+.timeline .row:last-child {
+  margin-bottom: 0;
+}
+.timeline .timeline__left {
+  position: relative;
+  top: -0.5rem;
+  text-align: right;
+}
+@media (max-width: 991px) {
+  .timeline .timeline__left {
+    display: none;
+  }
+}
+.timeline .timeline__time {
+  color: #3498db;
+  margin-right: 10%;
+}
+.timeline .timeline__circle {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  top: .5rem;
+  background-color: #3498db;
+  border: 0.5rem solid #8bc4ea;
+  -webkit-border-radius: 50% 50%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 50% 50%;
+  -moz-background-clip: padding;
+  border-radius: 50% 50%;
+  background-clip: padding-box;
+}
+.timeline .row:first-child .timeline__circle:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 99999rem;
+  position: absolute;
+  border-left: 2px dashed #8bc4ea;
+  left: 50%;
+  margin-left: -1px;
+  z-index: -1;
+  top: -10000rem;
+}
+.timeline .timeline__content p {
+  color: #2c3e50;
+}
+.timeline .timeline__content > p:first-of-type {
+  margin-top: 0;
+}
+.timeline .timeline__content header {
+  margin-bottom: 1rem;
+}
+@media (min-width: 992px) {
+  .timeline .timeline__content header {
+    display: none;
+  }
 }
 /*# sourceMappingURL=landing.css.map */
