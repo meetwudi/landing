@@ -1031,56 +1031,56 @@ h6 {
 }
 .icon-email {
   background-image: url(../img/icon/icon.png);
-  background-position: 0px -100px;
+  background-position: 0px -134px;
   width: 72px;
   height: 72px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
   .icon-email {
     background-image: url(../img/icon/icon-2x.png);
-    background-position: 0px -196px;
+    background-position: 0px -262px;
     width: 144px;
     height: 144px;
-    background-position: 0px -100px;
+    background-position: 0px -134px;
     height: 72px;
     width: 72px;
-    background-size: 72px 246px;
+    background-size: 95px 371px;
   }
 }
 .icon-blog {
   background-image: url(../img/icon/icon.png);
-  background-position: 0px -26px;
+  background-position: 0px -60px;
   width: 72px;
   height: 72px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
   .icon-blog {
     background-image: url(../img/icon/icon-2x.png);
-    background-position: 0px -50px;
+    background-position: 0px -116px;
     width: 144px;
     height: 144px;
-    background-position: 0px -26px;
+    background-position: 0px -60px;
     height: 72px;
     width: 72px;
-    background-size: 72px 246px;
+    background-size: 95px 371px;
   }
 }
 .icon-weibo {
   background-image: url(../img/icon/icon.png);
-  background-position: 0px -174px;
+  background-position: 0px -208px;
   width: 72px;
   height: 72px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
   .icon-weibo {
     background-image: url(../img/icon/icon-2x.png);
-    background-position: 0px -342px;
+    background-position: 0px -408px;
     width: 144px;
     height: 144px;
-    background-position: 0px -174px;
+    background-position: 0px -208px;
     height: 72px;
     width: 72px;
-    background-size: 72px 246px;
+    background-size: 95px 371px;
   }
 }
 .icon-arrow-down {
@@ -1097,16 +1097,20 @@ h6 {
     background-position: 0px 0px;
     height: 24px;
     width: 20px;
-    background-size: 72px 246px;
+    background-size: 95px 371px;
   }
 }
 [class^="icon-"] {
   display: inline-block;
 }
+/*= Resets
+///////////////////////////////////////*/
 html,
 body {
   height: 100%;
 }
+/*= Tools
+///////////////////////////////////////*/
 .clearfix:before,
 .clearfix:after,
 .container:before,
