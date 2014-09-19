@@ -55,8 +55,21 @@
       position: absolute;
       top: 100%;
       left: 0;
-      height: 100%;
       width: 100%;
+      height: 100%;
+      background-color: fade(@brand-primary, 90%);
+      padding: 0 1rem;
+      color: @brand-light;
+      box-sizing: border-box;
+      .lh-transition(all .3s ease-in-out);
+    }
+
+    .portfolio__item .item__description {
+
+    }
+
+    .portfolio__item:hover .item__description-wrap {
+      top: 0;
     }
 
     .portfolio__item footer {
