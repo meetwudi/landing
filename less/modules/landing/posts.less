@@ -23,15 +23,16 @@
 
     .list__item {
       margin: 1rem 0;
+      height: 2rem;
+      line-height: 2rem;
     }
 
     .list__anchor {
       font-size: 1.5rem;
-      color: white;
+      color: @brand-light;
       text-decoration: none;
       position: relative;
-      top: -.3rem;
-      left: .8rem;
+      top: .2rem;
       &:hover {
         text-decoration: underline;
       }
@@ -41,8 +42,6 @@
     }
 
     .list__icon {
-      @media (max-width: @screen-sm-max) {
-        display: none;
-      }
+      margin-right: 1rem;
     }
 }

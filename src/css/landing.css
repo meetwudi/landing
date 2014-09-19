@@ -234,6 +234,17 @@ p,
   box-sizing: border-box;
   padding: 0 1rem !important;
 }
+@font-face {
+  font-family: 'iconfont';
+  src: url('http://at.alicdn.com/t/font_1411119797_3276947.eot');
+  src: url('http://at.alicdn.com/t/font_1411119797_3276947.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('http://at.alicdn.com/t/font_1411119797_3276947.woff') format('woff'), /* chrome、firefox */ url('http://at.alicdn.com/t/font_1411119797_3276947.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('http://at.alicdn.com/t/font_1411119797_3276947.svg#iconfont') format('svg');
+  
+  /* IE9*/
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: 'iconfont';
+}
 /* cyrillic-ext */
 @font-face {
   font-family: 'Open Sans';
@@ -1080,56 +1091,56 @@ p {
 }
 .icon-email {
   background-image: url(../img/icon/icon.png);
-  background-position: 0px -134px;
+  background-position: 0px -100px;
   width: 72px;
   height: 72px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
   .icon-email {
     background-image: url(../img/icon/icon-2x.png);
-    background-position: 0px -262px;
+    background-position: 0px -196px;
     width: 144px;
     height: 144px;
-    background-position: 0px -134px;
+    background-position: 0px -100px;
     height: 72px;
     width: 72px;
-    background-size: 95px 373px;
+    background-size: 95px 339px;
   }
 }
 .icon-blog {
   background-image: url(../img/icon/icon.png);
-  background-position: 0px -60px;
+  background-position: 0px -26px;
   width: 72px;
   height: 72px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
   .icon-blog {
     background-image: url(../img/icon/icon-2x.png);
-    background-position: 0px -116px;
+    background-position: 0px -50px;
     width: 144px;
     height: 144px;
-    background-position: 0px -60px;
+    background-position: 0px -26px;
     height: 72px;
     width: 72px;
-    background-size: 95px 373px;
+    background-size: 95px 339px;
   }
 }
 .icon-weibo {
   background-image: url(../img/icon/icon.png);
-  background-position: 0px -208px;
+  background-position: 0px -174px;
   width: 72px;
   height: 72px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
   .icon-weibo {
     background-image: url(../img/icon/icon-2x.png);
-    background-position: 0px -408px;
+    background-position: 0px -342px;
     width: 144px;
     height: 144px;
-    background-position: 0px -208px;
+    background-position: 0px -174px;
     height: 72px;
     width: 72px;
-    background-size: 95px 373px;
+    background-size: 95px 339px;
   }
 }
 .icon-arrow-down {
@@ -1146,43 +1157,25 @@ p {
     background-position: 0px 0px;
     height: 24px;
     width: 20px;
-    background-size: 95px 373px;
+    background-size: 95px 339px;
   }
 }
 .icon-ilove {
   background-image: url(../img/icon/icon.png);
-  background-position: 0px -282px;
+  background-position: 0px -248px;
   width: 95px;
   height: 91px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
   .icon-ilove {
     background-image: url(../img/icon/icon-2x.png);
-    background-position: 0px -554px;
+    background-position: 0px -488px;
     width: 190px;
     height: 182px;
-    background-position: 0px -282px;
+    background-position: 0px -248px;
     height: 91px;
     width: 95px;
-    background-size: 95px 373px;
-  }
-}
-.icon-post {
-  background-image: url(../img/icon/icon.png);
-  background-position: 0px -26px;
-  width: 26px;
-  height: 32px;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
-  .icon-post {
-    background-image: url(../img/icon/icon-2x.png);
-    background-position: 0px -50px;
-    width: 52px;
-    height: 64px;
-    background-position: 0px -26px;
-    height: 32px;
-    width: 26px;
-    background-size: 95px 373px;
+    background-size: 95px 339px;
   }
 }
 [class^="icon-"] {
@@ -1569,14 +1562,15 @@ lesshat-selector { -lh-property: 0 ;
 }
 .posts .list__item {
   margin: 1rem 0;
+  height: 2rem;
+  line-height: 2rem;
 }
 .posts .list__anchor {
   font-size: 1.5rem;
-  color: white;
+  color: #ecf0f1;
   text-decoration: none;
   position: relative;
-  top: -0.3rem;
-  left: .8rem;
+  top: .2rem;
 }
 .posts .list__anchor:hover {
   text-decoration: underline;
@@ -1586,9 +1580,7 @@ lesshat-selector { -lh-property: 0 ;
     left: 0;
   }
 }
-@media (max-width: 767px) {
-  .posts .list__icon {
-    display: none;
-  }
+.posts .list__icon {
+  margin-right: 1rem;
 }
 /*# sourceMappingURL=landing.css.map */
