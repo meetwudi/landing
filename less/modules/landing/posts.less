@@ -1,0 +1,48 @@
+@import '../../mixins/mixins';
+
+.posts {
+  background-color: @brand-dark;
+  color: @brand-light;
+
+  .posts__header {
+    overflow: hidden;
+  }
+
+  .posts__title {
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  .posts__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+  }
+
+    .list__item {
+      margin: 1rem 0;
+    }
+
+    .list__anchor {
+      font-size: 1.5rem;
+      color: white;
+      text-decoration: none;
+      position: relative;
+      top: -.3rem;
+      left: .8rem;
+      &:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: @screen-sm-max) {
+        left: 0;
+      }
+    }
+
+    .list__icon {
+      @media (max-width: @screen-sm-max) {
+        display: none;
+      }
+    }
+}
