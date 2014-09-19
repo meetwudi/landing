@@ -1,0 +1,39 @@
+@import '../../mixins/mixins';
+
+.intro {
+  background-color: @brand-secondary;
+
+  .intro__avatar {
+    text-align: center;
+  }
+
+    .intro__avatar .avatar__wrap {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      border: 1rem solid saturate(@brand-secondary, -20%);
+      .lh-border-radius(50% 50%);
+      .lh-box-shadow(2px 2px 2px darken(@brand-secondary, 20%));
+
+      @media (max-width: @screen-sm-max) {
+        width: 14rem;
+      }
+    }
+
+    .intro__avatar .avatar__img {
+      width: 100%;
+      height: auto;
+      float: left;
+    }
+
+  .intro__content {
+    color: @brand-light;
+    padding-left: 2rem;
+  }
+
+  .intro__title {
+    font-size: 2.25rem;
+    font-weight: 300;
+  }
+}
