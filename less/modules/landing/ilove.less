@@ -1,5 +1,19 @@
 @import '../../mixins/mixins';
 
 .ilove {
-  background-color: whitesmoke;
+  background-color: @brand-dark;
+  color: @brand-light;
+  font-style: italic;
+
+  header {
+    text-align: center;
+  }
+
+  .ilove__featured-wrap, p {
+    margin-top: 6rem;
+  }
+
+  .ilove__featured {
+    width: 100%;
+  }
 }
