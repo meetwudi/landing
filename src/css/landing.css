@@ -1181,7 +1181,7 @@ p {
 [class^="icon-"] {
   display: inline-block;
 }
-.welcome {
+section.welcome {
   display: table;
   width: 100%;
   position: relative;
@@ -1195,7 +1195,7 @@ p {
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
 }
-.welcome .welcome__overlay {
+section.welcome .welcome__overlay {
   display: block;
   background-color: rgba(44, 62, 80, 0.3);
   position: absolute;
@@ -1333,13 +1333,13 @@ p {
 @keyframes arrow-bounce{ from {-webkit-transform: translateY(0);-moz-transform: translateY(0);-ms-transform: translateY(0);transform: translateY(0); } to {-webkit-transform: translateY(.4rem);-moz-transform: translateY(.4rem);-ms-transform: translateY(.4rem);transform: translateY(.4rem); }} 
 lesshat-selector { -lh-property: 0 ;
 }
-.intro {
+section.intro {
   background-color: #e74c3c;
 }
-.intro .intro__avatar {
+section.intro .intro__avatar {
   text-align: center;
 }
-.intro .intro__avatar .avatar__wrap {
+section.intro .intro__avatar .avatar__wrap {
   display: inline-block;
   width: 100%;
   overflow: hidden;
@@ -1356,52 +1356,52 @@ lesshat-selector { -lh-property: 0 ;
   box-shadow: 2px 2px 2px #a82315;
 }
 @media (max-width: 767px) {
-  .intro .intro__avatar .avatar__wrap {
+  section.intro .intro__avatar .avatar__wrap {
     width: 14rem;
   }
 }
-.intro .intro__avatar .avatar__img {
+section.intro .intro__avatar .avatar__img {
   width: 100%;
   height: auto;
   float: left;
 }
-.intro .intro__content {
+section.intro .intro__content {
   color: #ecf0f1;
   padding-left: 2rem;
 }
 @media (max-width: 767px) {
-  .intro .intro__content {
+  section.intro .intro__content {
     padding-left: 0;
   }
 }
-.intro .intro__title {
+section.intro .intro__title {
   font-size: 2.25rem;
   font-weight: 300;
 }
-.timeline {
+section.timeline {
   overflow: hidden;
 }
-.timeline .row {
+section.timeline .row {
   margin-bottom: 5rem;
 }
-.timeline .row:last-child {
+section.timeline .row:last-child {
   margin-bottom: 0;
 }
-.timeline .timeline__left {
+section.timeline .timeline__left {
   position: relative;
   top: -0.5rem;
   text-align: right;
 }
 @media (max-width: 991px) {
-  .timeline .timeline__left {
+  section.timeline .timeline__left {
     display: none;
   }
 }
-.timeline .timeline__time {
+section.timeline .timeline__time {
   color: #3498db;
   margin-right: 10%;
 }
-.timeline .timeline__circle {
+section.timeline .timeline__circle {
   display: inline-block;
   box-sizing: border-box;
   height: 2rem;
@@ -1417,7 +1417,7 @@ lesshat-selector { -lh-property: 0 ;
   border-radius: 50% 50%;
   background-clip: padding-box;
 }
-.timeline .row:first-child .timeline__circle:before {
+section.timeline .row:first-child .timeline__circle:before {
   content: '';
   display: block;
   width: 0;
@@ -1429,44 +1429,44 @@ lesshat-selector { -lh-property: 0 ;
   z-index: -1;
   top: -10000rem;
 }
-.timeline .timeline__content p {
+section.timeline .timeline__content p {
   color: #2c3e50;
 }
-.timeline .timeline__content > p:first-of-type {
+section.timeline .timeline__content > p:first-of-type {
   margin-top: 0;
 }
-.timeline .timeline__content header {
+section.timeline .timeline__content header {
   margin-bottom: 1rem;
 }
 @media (min-width: 992px) {
-  .timeline .timeline__content header {
+  section.timeline .timeline__content header {
     display: none;
   }
 }
-.ilove {
+section.ilove {
   background-color: #2c3e50;
   color: #ecf0f1;
   font-style: italic;
 }
-.ilove header {
+section.ilove header {
   text-align: center;
 }
-.ilove .ilove__featured-wrap,
-.ilove p {
+section.ilove .ilove__featured-wrap,
+section.ilove p {
   margin-top: 6rem;
 }
-.ilove .ilove__featured {
+section.ilove .ilove__featured {
   width: 100%;
 }
-.portfolio .portfolio__header {
+section.portfolio .portfolio__header {
   overflow: hidden;
 }
-.portfolio .portfolio__title {
+section.portfolio .portfolio__title {
   font-weight: 300;
   font-style: italic;
   margin-bottom: 2rem;
 }
-.portfolio .portfolio__row {
+section.portfolio .portfolio__row {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -1480,11 +1480,11 @@ lesshat-selector { -lh-property: 0 ;
   margin-top: 2rem;
 }
 @media (max-width: 479px) {
-  .portfolio .portfolio__row {
+  section.portfolio .portfolio__row {
     display: block;
   }
 }
-.portfolio .portfolio__item {
+section.portfolio .portfolio__item {
   display: inline-block;
   width: 30%;
   box-sizing: border-box;
@@ -1494,26 +1494,26 @@ lesshat-selector { -lh-property: 0 ;
   background-color: #ecf0f1;
   cursor: pointer;
 }
-.portfolio .portfolio__item:hover {
+section.portfolio .portfolio__item:hover {
   border-color: #3498db;
 }
 @media (max-width: 479px) {
-  .portfolio .portfolio__item {
+  section.portfolio .portfolio__item {
     width: 80%;
     margin-left: 10%;
     margin-bottom: 2rem;
     text-align: left;
   }
 }
-.portfolio .portfolio__item header {
+section.portfolio .portfolio__item header {
   position: relative;
   overflow: hidden;
 }
-.portfolio .portfolio__item .item__feature-img {
+section.portfolio .portfolio__item .item__feature-img {
   width: 100%;
   height: 100%;
 }
-.portfolio .portfolio__item .item__description-wrap {
+section.portfolio .portfolio__item .item__description-wrap {
   position: absolute;
   top: 100%;
   left: 0;
@@ -1528,81 +1528,81 @@ lesshat-selector { -lh-property: 0 ;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.portfolio .portfolio__item:hover .item__description-wrap {
+section.portfolio .portfolio__item:hover .item__description-wrap {
   top: 0;
 }
-.portfolio .portfolio__item footer {
+section.portfolio .portfolio__item footer {
   padding: 2rem .6rem;
 }
-.portfolio .portfolio__item .item__name {
+section.portfolio .portfolio__item .item__name {
   font-weight: bold;
   color: #2c3e50;
   text-decoration: none !important;
 }
-.portfolio .portfolio__item:hover .item__name {
+section.portfolio .portfolio__item:hover .item__name {
   color: #3498db;
 }
-.posts {
+section.posts {
   background-color: #2c3e50;
   color: #ecf0f1;
 }
-.posts .posts__header {
+section.posts .posts__header {
   overflow: hidden;
 }
-.posts .posts__title {
+section.posts .posts__title {
   font-weight: 300;
   font-style: italic;
   margin-bottom: 2rem;
 }
-.posts .posts__list {
+section.posts .posts__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
   width: 100%;
 }
-.posts .list__item {
+section.posts .list__item {
   margin: 1rem 0;
   height: 2rem;
   line-height: 2rem;
 }
-.posts .list__anchor {
+section.posts .list__anchor {
   font-size: 1.5rem;
   color: #ecf0f1;
   text-decoration: none;
   position: relative;
   top: .2rem;
 }
-.posts .list__anchor:hover {
+section.posts .list__anchor:hover {
   text-decoration: underline;
 }
 @media (max-width: 767px) {
-  .posts .list__anchor {
+  section.posts .list__anchor {
     left: 0;
   }
 }
-.posts .list__icon {
+section.posts .list__icon {
   margin-right: 1rem;
 }
-.hireme .hireme__banner {
+section.hireme .hireme__banner {
   height: 1rem;
   background: repeating-linear-gradient(to right, #f0f3c1 0%, #f0f3c1 10%, #3286bf 10%, #3286bf 20%, #8e728c 20%, #8e728c 30%);
 }
-.hireme .hireme__content {
+section.hireme .hireme__content {
   background-color: #e74c3c;
   color: #ecf0f1;
 }
-.hireme .hireme__content .content__title {
+section.hireme .hireme__content .content__title {
   font-size: 2.25rem;
   font-weight: 300;
 }
-.hireme .hireme__content .content__text > p {
+section.hireme .hireme__content .content__text > p {
   font-size: 1.5rem !important;
   font-weight: 300;
 }
-.hireme .hireme__content .content__cta-wrap {
+section.hireme .hireme__content .content__cta-wrap {
   margin-top: 3rem;
 }
-.hireme .hireme__content .content__cta {
+section.hireme .hireme__content .content__cta {
   color: #ecf0f1;
   display: inline-block;
   padding: 1rem 2rem;
@@ -1618,7 +1618,20 @@ lesshat-selector { -lh-property: 0 ;
   -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
-.hireme .hireme__content .content__cta:hover {
+section.hireme .hireme__content .content__cta:hover {
   background-color: #2c3e50;
+}
+section.footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  overflow: hidden;
+  text-align: center;
+  padding: 2rem 0;
+}
+section.footer .footer__icp {
+  color: #ecf0f1;
+  line-height: 1.67;
+  font-size: 1rem;
+  font-size: .8rem;
 }
 /*# sourceMappingURL=landing.css.map */
