@@ -1583,4 +1583,42 @@ lesshat-selector { -lh-property: 0 ;
 .posts .list__icon {
   margin-right: 1rem;
 }
+.hireme .hireme__banner {
+  height: 1rem;
+  background: repeating-linear-gradient(to right, #f0f3c1 0%, #f0f3c1 10%, #3286bf 10%, #3286bf 20%, #8e728c 20%, #8e728c 30%);
+}
+.hireme .hireme__content {
+  background-color: #e74c3c;
+  color: #ecf0f1;
+}
+.hireme .hireme__content .content__title {
+  font-size: 2.25rem;
+  font-weight: 300;
+}
+.hireme .hireme__content .content__text > p {
+  font-size: 1.5rem !important;
+  font-weight: 300;
+}
+.hireme .hireme__content .content__cta-wrap {
+  margin-top: 3rem;
+}
+.hireme .hireme__content .content__cta {
+  color: #ecf0f1;
+  display: inline-block;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  margin-right: 4rem;
+  background-color: rgba(44, 62, 80, 0.75);
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+.hireme .hireme__content .content__cta:hover {
+  background-color: #2c3e50;
+}
 /*# sourceMappingURL=landing.css.map */
