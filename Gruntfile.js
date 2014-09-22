@@ -11,10 +11,10 @@ module.exports = function(grunt) {
                 options: {
                     sourceMap: true,
                     sourceMapURL: '<%= pkg.name %>.css.map',
-                    sourceMapFilename: 'src/css/<%= pkg.name %>.css.map'
+                    sourceMapFilename: 'public/src/css/<%= pkg.name %>.css.map'
                 },
                 files: {
-                    'src/css/<%= pkg.name %>.css': 'less/<%= pkg.name %>.less'
+                    'public/src/css/<%= pkg.name %>.css': 'public/less/<%= pkg.name %>.less'
                 }
             }
         },
@@ -25,8 +25,8 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'build/css',
-                    src: ['*.css', '!*.min.css'],
-                    dest: 'build/css'
+                    src: ['public/*.css', '!*.min.css'],
+                    dest: 'public/build/css'
                 }]
             }
         },
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
         copy: {
             build: {
                 files: [
-                    {expand: true, cwd: 'src', src: ['**'], dest: 'build/'}
+                    {expand: true, cwd: 'public/src', src: ['**'], dest: 'public/build/'}
                 ]
             }
         },
@@ -43,9 +43,9 @@ module.exports = function(grunt) {
 
         sprite: {
             icon: {
-                src: ['img/icon/*.png'],
-                destImg: 'src/img/icon/icon.png',
-                destCSS: 'less/mixins/sprites/icon/icon.less',
+                src: ['public/img/icon/*.png'],
+                destImg: 'public/src/img/icon/icon.png',
+                destCSS: 'public/less/mixins/sprites/icon/icon.less',
                 padding: 2,
                 cssFormat: 'less',
                 imgPath: '../img/icon/icon.png',
@@ -57,9 +57,9 @@ module.exports = function(grunt) {
                 }
             },
             icon_2x: {
-                src: ['img/icon-2x/*.png'],
-                destImg: 'src/img/icon/icon-2x.png',
-                destCSS: 'less/mixins/sprites/icon/icon-2x.less',
+                src: ['public/img/icon-2x/*.png'],
+                destImg: 'public/src/img/icon/icon-2x.png',
+                destCSS: 'public/less/mixins/sprites/icon/icon-2x.less',
                 padding: 2,
                 cssFormat: 'less',
                 imgPath: '../img/icon/icon-2x.png',
@@ -74,7 +74,7 @@ module.exports = function(grunt) {
 
 
         watch: {
-            files: ['less/**/*.less', 'src/*.html'],
+            files: ['public/less/**/*.less', 'public/src/*.html'],
             tasks: ['src'],
             options: {
                 livereload: true
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
 
         rm: {
           buildDir: {
-              dir: 'build'
+              dir: 'public/build'
           }
         },
 
@@ -96,29 +96,29 @@ module.exports = function(grunt) {
                 length: 8
             },
             css: {
-                src: ['build/css/**/*.css']
+                src: ['public/build/css/**/*.css']
             },
             images: {
-                src: ['build/img/**/*.{png,jpg}']
+                src: ['public/build/img/**/*.{png,jpg}']
             }
         },
 
 
         useminPrepare: {
-            html: ['build/index.html']
+            html: ['public/build/index.html']
         },
 
 
         usemin: {
-            html: ['build/index.html'],
-            css: ['build/css/*.css']
+            html: ['public/build/index.html'],
+            css: ['public/build/css/*.css']
         },
 
 
         imagemin: {
             bigimage: {
                 files: {
-                    'src/img/background.jpg': 'img/background.jpg'
+                    'public/src/img/background.jpg': 'public/img/background.jpg'
                 },
                 options: {
                     optimizationLevel: 3
@@ -130,6 +130,9 @@ module.exports = function(grunt) {
             build: {
                 options: {
                     rewriter: function (url) {
+                        if (url.indexOf('http://') >= 0 || url.indexOf('https://') >= 0) {
+                            return url;
+                        }
                         if (url.indexOf('../img') === 0) {
                             url = url.replace('../img', '/img');
                         }
@@ -138,10 +141,21 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'build',
+                    cwd: 'public/build',
                     src: '**/*.{css,html}',
-                    dest: 'build'
+                    dest: 'public/build'
                 }]
+            }
+        },
+
+
+
+
+        concat: {
+            scripts: {
+                src: ['public/components/seajs/dist/sea.js',
+                    'public/components/seajs-combo/dist/seajs-combo.js'],
+                dest: 'public/src/js/seed.js'
             }
         }
     });
@@ -151,13 +165,14 @@ module.exports = function(grunt) {
     // 预发布（src）
     grunt.registerTask('src:image', ['sprite', 'imagemin']);
     grunt.registerTask('src:css', ['less:src']);
-    grunt.registerTask('src', ['src:css']);
+    grunt.registerTask('src:scripts', ['concat:scripts']);
+    grunt.registerTask('src', ['src:css', 'src:scripts']);
 
     // build环境
     grunt.registerTask('build:pre', ['rm', 'copy:build']);
     grunt.registerTask('build:opt', ['useminPrepare', 'cssmin:build', 'filerev', 'usemin', 'cdnify']);
     grunt.registerTask('build', ['build:pre', 'build:opt']);
 
-    grunt.registerTask('default', ['src', 'build'])
+    grunt.registerTask('default', ['src', 'build']);
 //    grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 };
